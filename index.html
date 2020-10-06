@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>QR Code Generate</title>
+</head>
+<script type="text/javascript">
+		function generateBarCode() 
+		{
+		    var nric = document.getElementById('text').value;
+		    var url = 'https://api.QRserver.com/v1/create-qr-code/?data=' + nric + '&amp;size=50x50';
+		    document.getElementById("barcode").src=url;
+		}
+	
+</script>
+<style type="text/css">
+	.c-container{
+		padding: 5px 20px;
+		text-align: center;
+	}
+	#barcode{
+		height: 250px;
+		width: 250px;
+		margin-bottom: 20px;
+	}
+	#text{
+		padding: 5px;
+		width: 40%;
+		font-size: 20px;
+		border-radius: 5px;
+		text-align: center;
+		margin-bottom: 10px;
+	}
+	a{
+		
+		padding: 10px 20px;
+		background-color: #000;
+		margin-top: 10px;
+		border-radius: 10px;
+		color: #fff;
+		text-decoration: none;
+		font-size: 21px;
+	}
+</style>
+<body>
+	<div class="c-container">
+		<input id="text" type="text" placeholder="Please Enter your Word to generate into QR Code" onblur='generateBarCode();'> 
+		<br>
+  		<img id='barcode' src="https://api.qrserver.com/v1/create-qr-code/?data=HelloWorld&amp;size=200x200" alt="" title="Image"  />
+  		<br>
+  		<a target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?data=HelloWorld&amp;size=200x200" download>Save Image</a>
+	</div>
+	  	
+</body>
+</html>
