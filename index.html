@@ -9,6 +9,8 @@
 		    var nric = document.getElementById('text').value;
 		    var url = 'https://api.QRserver.com/v1/create-qr-code/?data=' + nric + '&amp;size=50x50';
 		    document.getElementById("barcode").src=url;
+		    document.getElementById("downloadingimage").href=url;
+
 		}
 	
 </script>
@@ -47,7 +49,7 @@
 		<br>
   		<img id='barcode' src="https://api.qrserver.com/v1/create-qr-code/?data=HelloWorld&amp;size=200x200" alt="" title="Image"  />
   		<br>
-  		<a target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?data=HelloWorld&amp;size=200x200" download>Save Image</a>
+  		<a target="_blank" id="downloadingimage" href="https://api.qrserver.com/v1/create-qr-code/?data=HelloWorld&amp;size=200x200" download>Save Image</a>
 	</div>
 	  	
 </body>
